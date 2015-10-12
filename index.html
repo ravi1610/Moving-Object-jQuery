@@ -1,0 +1,33 @@
+<head>
+    <title>Moving Object</title>
+
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js" ></script>
+    <script language="javascript">
+        $(document).ready(function () {
+            loop()
+        });
+        function loop() {
+            $('.ball').attr('src', 'right.gif');
+            $('#ball')
+                    .animate({
+                        left: 280
+                    }, 5000);
+            setTimeout(function () {
+                $('.ball').attr('src', 'left.gif');
+                $('#ball')
+                        .animate({
+                            left: 0
+                        }, 5000);
+            }, 5000);
+            window.setTimeout(function () {
+                loop()
+            }, 10000)
+        }
+    </script>
+</head>
+
+<body>
+    <img class="ball" id="ball"  style="position:relative;xpos:0px;ypos:0px;" 
+         width="50" height="100" border="0" />
+</body>
+</html>
